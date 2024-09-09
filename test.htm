@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .overview {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .overview img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 5px;
+        }
+
+        .overview div {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .blog-post {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .blog-post img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .blog-post h3 {
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#references">References</a>
+        <a href="#projects">Projects</a>
+        <a href="#impressum">Impressum</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="overview">
+                <div>
+                    <p>
+                        Here is a brief overview about yourself. This section can include your professional background,
+                        hobbies, or anything else that provides insight into who you are.
+                    </p>
+                </div>
+                <img src="Michael_Drost (2).jpeg" alt="About Me Image">
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="blog-post">
+                <img src="Grafana.png" alt="Project Image 1">
+                <h3>Project Title 1</h3>
+                <p>
+                    A brief description of the project goes here. Highlight the purpose, goals, and outcomes of the
+                    project.
+                </p>
+            </div>
+
+            <div class="blog-post">
+                <img src="Fuxa.png" alt="Project Image 2">
+                <h3>Project Title 2</h3>
+                <p>
+                    Another project description goes here. This is another chance to showcase your skills and work.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="impressum">
+            <h2>Impressum</h2>
+            <div class="overview">
+                <div>
+                    <p>
+                        This is the Impressum section. Here you can provide legal information about your website,
+                        including contact details and ownership.
+                    </p>
+                </div>
+                <img src="https://via.placeholder.com/200" alt="Impressum Image">
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Personal Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
