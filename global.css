@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('background-tech.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header, footer {
+    background-color: rgba(0, 77, 122, 0.9); /* leicht transparent */
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    backdrop-filter: blur(2px);
+}
+
+nav {
+    text-align: center;
+    background-color: rgba(0, 54, 86, 0.9);
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+}
+
+nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 100, 0, 0.1);
+}
+
+h1, h2 {
+    color: #004d7a;
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+a.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #0074a8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    background-color: #005a80;
+}
