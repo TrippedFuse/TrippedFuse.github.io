@@ -1,0 +1,136 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+header {
+    background-color: #2E7D32;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav.main-nav, nav.sub-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background-color: #A5D6A7;
+    padding: 0.5rem 0;
+}
+
+nav.main-nav a, nav.sub-nav a {
+    color: #2E7D32;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav.main-nav a:hover, nav.sub-nav a:hover {
+    background-color: #2E7D32;
+    color: white;
+}
+
+nav.main-nav a.active, nav.sub-nav a.active {
+    background-color: #1B5E20;
+    color: white;
+}
+
+section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #F1F8F2;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: #2E7D32;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+}
+
+.angebot-bild {
+    float: right;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+ul {
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+button.cta {
+    background-color: #2E7D32;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button.cta:hover {
+    background-color: #1B5E20;
+}
+
+footer {
+    background-color: #2E7D32;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+html, body {
+    height: 100%;      /* Wichtig, damit flex auf Body funktioniert */
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Body füllt mindestens den Viewport */
+}
+
+main {
+    flex: 1;           /* Nimmt den verfügbaren Platz ein */
+}
+
+footer {
+    background-color: #2E7D32;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #A5D6A7; /* lighter green on hover */
+}
