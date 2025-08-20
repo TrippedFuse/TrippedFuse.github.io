@@ -134,3 +134,50 @@ footer .footer-links a {
 footer .footer-links a:hover {
     color: #A5D6A7; /* lighter green on hover */
 }
+
+/* --- Lightbox (Bild-Overlay) ------------------------------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+}
+.lightbox[hidden] { display: none; }
+
+.lightbox__img {
+  max-width: min(92vw, 1400px);
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.6);
+}
+
+.lightbox__btn {
+  position: absolute;
+  border: 0;
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox__btn:focus { outline: 2px solid #fff; outline-offset: 2px; }
+
+.lightbox__close { top: 1rem; right: 1rem; }
+.lightbox__prev, .lightbox__next { top: 50%; transform: translateY(-50%); }
+.lightbox__prev { left: 1rem; }
+.lightbox__next { right: 1rem; }
+
+/* Wenn nur 1 Bild vorhanden ist, Navigation ausblenden */
+.lightbox.no-nav .lightbox__prev,
+.lightbox.no-nav .lightbox__next { display: none; }
+
+/* Cursor-Hinweis auf Zoom */
+img.angebot-bild { cursor: zoom-in; }
+
