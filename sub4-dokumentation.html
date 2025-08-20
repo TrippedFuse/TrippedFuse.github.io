@@ -66,5 +66,73 @@
 
 </html>
 
+<script>
+(() => {
+  const thumbs = Array.from(document.querySelectorAll('img.angebot-bild'));
+  if (!thumbs.length) return;
+
+  const lb = document.getElementById('lightbox');
+  const imgEl = lb.querySelector('.lightbox__img');
+  const btnClose = lb.querySelector('.lightbox__close');
+  const btnPrev  = lb.querySelector('.lightbox__prev');
+  const btnNext  = lb.querySelector('.lightbox__next');
+
+  const sources = thumbs.map(img => img.dataset.full || img.src);
+  let index = 0;
+  let lastFocus = null;
+
+  if (sources.length < 2) lb.classList.add('no-nav');
+
+  function setImage(i) {
+    index = (i + sources.length) % sources.length;
+    imgEl.src = sources[index];
+    imgEl.alt = thumbs[index].alt || '';
+    // Preload Nachbarn
+    new Image().src = sources[(index - 1 + sources.length) % sources.length];
+    new Image().src = sources[(index + 1) % sources.length];
+  }
+
+  function open(i) {
+    setImage(i);
+    lb.hidden = false;
+    lb.setAttribute('aria-hidden', 'false');
+    lastFocus = document.activeElement;
+    document.body.style.overflow = 'hidden';
+    btnClose.focus();
+  }
+
+  function close() {
+    lb.hidden = true;
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  thumbs.forEach((img, i) => {
+    img.addEventListener('click', e => { e.preventDefault(); open(i); });
+    // Tastaturbedienung am Thumbnail (Enter/Space)
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+    });
+  });
+
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', () => setImage(index - 1));
+  btnNext.addEventListener('click', () => setImage(index + 1));
+
+  // Klick auf den abgedunkelten Hintergrund schließt
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+  // Tastaturkürzel im Overlay
+  document.addEventListener('keydown', e => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') setImage(index - 1);
+    if (e.key === 'ArrowRight') setImage(index + 1);
+  });
+})();
+</script>
+
 
 
